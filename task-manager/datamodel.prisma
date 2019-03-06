@@ -1,0 +1,17 @@
+# datamodel.prisma
+# type User{
+#   id: ID! @unique
+#   name: String!
+# }
+type Project {
+  id: ID! @unique
+  name: String!
+  tasks: [Task!]!
+}
+
+type Task {
+  id: ID! @unique
+  title: String!
+  project: Project!
+  isCompleted: Boolean! @default(value: "false")
+}
